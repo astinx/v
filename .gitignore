@@ -1,0 +1,12 @@
+.idea
+.vscode
+.DS_Store
+
+# cache
+*.lock
+
+
+# log file
+*.log
+*.sw?
+*~
