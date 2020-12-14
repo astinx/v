@@ -96,9 +96,9 @@
 {include file="../../../application/admin/view/public/foot" /}
 
 <script type="text/javascript">
-    var curUrl="{:url('gbook/data',$param)}";
+    let curUrl="{:url('gbook/data',$param)}";
     layui.use(['laypage', 'layer','form'], function() {
-        var laypage = layui.laypage
+        let laypage = layui.laypage
                 , layer = layui.layer,
                 form = layui.form;
 

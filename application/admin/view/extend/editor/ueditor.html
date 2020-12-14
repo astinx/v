@@ -2,10 +2,10 @@
 <script type="text/javascript" src="__STATIC__/ueditor/ueditor.all.min.js"></script>
 <script type="text/javascript">
     window.UEDITOR_CONFIG.serverUrl = "{:url('upload/upload')}?from=ueditor&flag={$cl|strtolower}_editor&input=upfile";
-    var EDITOR = UE;
+    let EDITOR = UE;
 </script>
 <script>
-    var editor = "{$editor}";
+    let editor = "{$editor}";
     function editor_getEditor(obj)
     {
         return EDITOR.getEditor(obj);

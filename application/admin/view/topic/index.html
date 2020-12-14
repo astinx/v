@@ -68,9 +68,9 @@
 {include file="../../../application/admin/view/public/foot" /}
 
 <script type="text/javascript">
-    var curUrl="{:url('topic/data',$param)}";
+    let curUrl="{:url('topic/data',$param)}";
     layui.use(['laypage', 'layer','form'], function() {
-        var laypage = layui.laypage
+        let laypage = layui.laypage
                 , layer = layui.layer,
                 form = layui.form;
 

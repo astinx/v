@@ -1,13 +1,13 @@
 {include file="../../../application/admin/view/public/head" /}
 <script language="javascript">
-    var b=false;
-    var iv_cj,iv_makeinfo,iv_makeindex,iv_maketype;
-    var urln=0,typeids='{$vod_type_ids_today}';
-    var cjUrl = "{:url('collect/apis')}";
+    let b=false;
+    let iv_cj,iv_makeinfo,iv_makeindex,iv_maketype;
+    let urln=0,typeids='{$vod_type_ids_today}';
+    let cjUrl = "{:url('collect/apis')}";
 
     $(function(){
         $("#btnGO").click(function(){
-            var time = new Array();
+            let time = new Array();
             time['cj'] = Number($("#ds_cj").val());
             time['makeinfo'] = Number($("#ds_makeinfo").val());
             time['makeindex'] = Number($("#ds_makeindex").val());
@@ -48,7 +48,7 @@
     });
     function cj()
     {
-        var urlc=$("#ds_url option:selected").length;
+        let urlc=$("#ds_url option:selected").length;
         $("#ds_url option:selected").each(function(k,v) {
             if(urln < urlc){
                 if(urln==k){
@@ -143,7 +143,7 @@
 {include file="../../../application/admin/view/public/foot" /}
 <script type="text/javascript">
     layui.use(['laypage', 'layer'], function() {
-        var laypage = layui.laypage
+        let laypage = layui.laypage
                 , layer = layui.layer;
 
 

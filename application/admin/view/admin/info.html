@@ -67,7 +67,7 @@
 <script type="text/javascript">
     layui.use(['form', 'layer'], function () {
         // 操作对象
-        var form = layui.form
+        let form = layui.form
                 , layer = layui.layer
                 , $ = layui.jquery;
 
@@ -86,7 +86,7 @@
         });
 
         form.on('checkbox(roleAuth1)', function(data) {
-            var child = $(data.elem).parent('dt').siblings('dd').find('input');
+            let child = $(data.elem).parent('dt').siblings('dd').find('input');
             /* 自动选中子节点 */
             child.each(function(index, item) {
                 if(item.disabled == true){
@@ -100,9 +100,9 @@
         });
 
         form.on('checkbox(roleAuth2)', function(data) {
-            var child = $(data.elem).parent().find('input');
-            var parent = $(data.elem).parent('dd').siblings('dt').find('input');
-            var parent_ck= true;
+            let child = $(data.elem).parent().find('input');
+            let parent = $(data.elem).parent('dd').siblings('dt').find('input');
+            let parent_ck= true;
             /* 自动选中子节点 */
             child.each(function(index, item) {
                 if(!item.checked){
@@ -117,7 +117,7 @@
 
 
         $('.formCheckAll').click(function(){
-            var child = $('.role-list-form-top').find('input');
+            let child = $('.role-list-form-top').find('input');
             /* 自动选中子节点 */
             child.each(function(index, item) {
                 item.checked = true;
@@ -125,7 +125,7 @@
             form.render('checkbox');
         });
         $('.formCheckOther').click(function(){
-            var child = $('.role-list-form-top').find('input');
+            let child = $('.role-list-form-top').find('input');
             /* 自动选中子节点 */
             child.each(function(index, item) {
                 item.checked = (item.checked  ? false : true);

@@ -145,7 +145,7 @@
 <!--请在下方写此页面业务相关的脚本-->
 <script>
     window.localStorage.clear();
-    var LAYUI_OFFSET = 60;
+    let LAYUI_OFFSET = 60;
 	
 	$('#admin_name').click(function(){
 		 $('body').toggleClass('drawer-body-right');
@@ -154,9 +154,9 @@
 
 <script type="text/javascript">
     layui.use(['element', 'layer'], function() {
-        var $ = layui.jquery, element = layui.element, layer = layui.layer;
+        let $ = layui.jquery, element = layui.element, layer = layui.layer;
         $('.layui-tab-content').height($(window).height() - 145);
-        var tab = {
+        let tab = {
             add: function(title, url, id) {
                 element.tabAdd('macTab', {
                         title: title,
@@ -168,8 +168,8 @@
             }
         };
         $('.admin-nav-item').click(function(event) {
-            var that = $(this);
-            var id = that.attr('data-id');
+            let that = $(this);
+            let id = that.attr('data-id');
             if ($('iframe[lay-id="'+id+'"]')[0]) {
                 tab.change(id);
                 event.stopPropagation();
@@ -194,18 +194,18 @@
         //显示顶部导航时作位置判断，点击左边菜单、上一tab、下一tab时公用
         function showTab(li) {
             if (li.length) {
-                var ul = $('#B_history'),
+                let ul = $('#B_history'),
                     li_offset = li.offset(),
                     li_width = li.outerWidth(true),
                     next_left = $('#page-next').offset().left, //右边按钮的界限位置
                     prev_right = $('#page-prev').offset().left + $('#page-prev').outerWidth(true); //左边按钮的界限位置
                 if (li_offset.left + li_width > next_left) { //如果将要移动的元素在不可见的右边，则需要移动
-                    var distance = li_offset.left + li_width - next_left; //计算当前父元素的右边距离，算出右移多少像素
+                    let distance = li_offset.left + li_width - next_left; //计算当前父元素的右边距离，算出右移多少像素
                     ul.animate({
                         left: '-=' + distance
                     }, 200, 'swing');
                 } else if (li_offset.left < prev_right) { //如果将要移动的元素在不可见的左边，则需要移动
-                    var distance = prev_right - li_offset.left; //计算当前父元素的左边距离，算出左移多少像素
+                    let distance = prev_right - li_offset.left; //计算当前父元素的左边距离，算出左移多少像素
                     ul.animate({
                         left: '+=' + distance
                     }, 200, 'swing');
@@ -218,7 +218,7 @@
         $('#page-prev').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
-            var ul = $('#B_history'),
+            let ul = $('#B_history'),
                 current = ul.find('.layui-this'),
                 li = current.prev('li');
             showTab(li);
@@ -229,7 +229,7 @@
         $('#page-next').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
-            var ul = $('#B_history'),
+            let ul = $('#B_history'),
                 current = ul.find('.layui-this'),
                 li = current.next('li');
             showTab(li);
@@ -239,8 +239,8 @@
         $('#J_refresh').click(function(e) {
             e.preventDefault();
             e.stopPropagation();
-            var index = layer.load();
-            var id = $('#B_history .layui-this').attr('lay-id'),
+            let index = layer.load();
+            let id = $('#B_history .layui-this').attr('lay-id'),
                 iframe = $("iframe[lay-id='"+id+"']")[0];
             if (iframe.contentWindow) {
                 iframe.contentWindow.location.reload(true);
@@ -266,7 +266,7 @@
         //关闭其他选项卡
         $(".closePageOther").on("click", function() {
             if ($("#B_history li").length > 1) {
-                var cid = $('#B_history .layui-this').attr('lay-id');
+                let cid = $('#B_history .layui-this').attr('lay-id');
                 $("#B_history li").each(function() {
                     data_id = $(this).attr('lay-id');
                     if (data_id != '' && data_id != '111' && data_id != cid) {
@@ -284,7 +284,7 @@
             $('.site-tree-mobile').click();
         });
         //手机设备的简单适配
-        var treeMobile = $('.site-tree-mobile'),
+        let treeMobile = $('.site-tree-mobile'),
             shadeMobile = $('.site-mobile-shade')
         treeMobile.on('click', function() {
             $('body').addClass('site-mobile');

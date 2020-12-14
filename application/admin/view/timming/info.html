@@ -102,7 +102,7 @@
 
     layui.use(['form', 'layer'], function () {
         // 操作对象
-        var form = layui.form
+        let form = layui.form
                 , layer = layui.layer
                 , $ = layui.jquery;
 
@@ -116,7 +116,7 @@
         });
 
         $('.formCheckAll').click(function(){
-            var child = $('.role-list-form').find('input');
+            let child = $('.role-list-form').find('input');
             /* 自动选中子节点 */
             child.each(function(index, item) {
                 item.checked = true;
@@ -124,7 +124,7 @@
             form.render('checkbox');
         });
         $('.formCheckOther').click(function(){
-            var child = $('.role-list-form').find('input');
+            let child = $('.role-list-form').find('input');
             /* 自动选中子节点 */
             child.each(function(index, item) {
                 item.checked = (item.checked  ? false : true);

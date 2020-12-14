@@ -75,9 +75,9 @@
 {include file="../../../application/admin/view/public/foot" /}
 
 <script type="text/javascript">
-    var curUrl="{:url('api')}?{$param_str}";
+    let curUrl="{:url('api')}?{$param_str}";
     layui.use(['laypage', 'layer','form'], function() {
-        var laypage = layui.laypage
+        let laypage = layui.laypage
                 , layer = layui.layer,
                 form = layui.form;
 
@@ -102,14 +102,14 @@
         });
 
         $('.j-btn').click(function(){
-           var wd = $('input[name="wd"]').val();
-            var url = changeParam(curUrl,'wd',wd);
+           let wd = $('input[name="wd"]').val();
+            let url = changeParam(curUrl,'wd',wd);
             location.href = url.replace('%7Bpage%7D',1).replace('%7Blimit%7D','');
         });
 
         $('.select_type').click(function(){
-            var t = $(this).attr('data-id');
-            var url = changeParam(curUrl,'t',t);
+            let t = $(this).attr('data-id');
+            let url = changeParam(curUrl,'t',t);
             location.href = url.replace('%7Bpage%7D',1).replace('%7Blimit%7D','');
         });
 

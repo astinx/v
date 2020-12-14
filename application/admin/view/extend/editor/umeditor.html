@@ -3,10 +3,10 @@
 <script type="text/javascript" src="__STATIC__/editor/umeditor/umeditor.min.js"></script>
 <script type="text/javascript">
     window.UMEDITOR_CONFIG.imageUrl = "{:url('upload/upload')}?from=umeditor&flag={$cl|strtolower}_editor&input=upfile";
-    var EDITOR = UM;
+    let EDITOR = UM;
 </script>
 <script>
-    var editor = "{$editor}";
+    let editor = "{$editor}";
     function editor_getEditor(obj)
     {
         return EDITOR.getEditor(obj);

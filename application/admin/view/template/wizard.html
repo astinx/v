@@ -246,11 +246,11 @@
 </div>
 {include file="../../../application/admin/view/public/foot" /}
 <script>
-    var mark='link',l_order='',l_by='';
+    let mark='link',l_order='',l_by='';
 
     layui.use(['form','upload', 'layer'], function () {
         // 操作对象
-        var form = layui.form
+        let form = layui.form
                 , layer = layui.layer
                 , $ = layui.jquery
                 , upload = layui.upload;
@@ -268,7 +268,7 @@
         $(".v_"+obj).show();
         mark=obj;
         if(obj=='year'){
-            var d = new Date();
+            let d = new Date();
             $("#end_year").val(d.getYear());
         }
 
@@ -276,9 +276,9 @@
     }
     function labelcreate()
     {
-        var c,p;
-        var s='',par='';
-        var rc=false;
+        let c,p;
+        let s='',par='';
+        let rc=false;
         
         switch(mark)
         {

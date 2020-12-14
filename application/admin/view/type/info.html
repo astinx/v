@@ -197,12 +197,12 @@
 <script type="text/javascript">
     function selectOnChange(id)
     {
-        var flag = id;
-        var type_tpl = 'type.html';
-        var type_tpl_list = 'show.html';
-        var type_tpl_detail = 'detail.html';
-        var type_tpl_play = 'play.html';
-        var type_tpl_down = 'down.html';
+        let flag = id;
+        let type_tpl = 'type.html';
+        let type_tpl_list = 'show.html';
+        let type_tpl_detail = 'detail.html';
+        let type_tpl_play = 'play.html';
+        let type_tpl_down = 'down.html';
 
         if(flag != 1){
             $(".vod-list").hide();
@@ -222,7 +222,7 @@
     }
     layui.use(['form','upload', 'layer'], function () {
         // 操作对象
-        var form = layui.form
+        let form = layui.form
                 , layer = layui.layer
                 , upload = layui.upload
                 , $ = layui.jquery;
@@ -234,13 +234,13 @@
             ,before: function(input) {
                 layer.msg("{:lang('upload_ing')}", {time:3000000});
             },done: function(res, index, upload) {
-                var obj = this.item;
+                let obj = this.item;
                 if (res.code == 0) {
                     layer.msg(res.msg);
                     return false;
                 }
                 layer.closeAll();
-                var input = $(obj).parent().parent().find('.upload-input');
+                let input = $(obj).parent().parent().find('.upload-input');
                 if ($(obj).attr('lay-type') == 'image') {
                     input.siblings('img').attr('src', res.data.file).show();
                 }
@@ -253,11 +253,11 @@
         });
 
         $('.upload-input').hover(function (e){
-            var e = window.event || e;
-            var imgsrc = $(this).val();
+            let e = window.event || e;
+            let imgsrc = $(this).val();
             if(imgsrc.trim()==""){ return; }
-            var left = e.clientX+document.body.scrollLeft+20;
-            var top = e.clientY+document.body.scrollTop+20;
+            let left = e.clientX+document.body.scrollLeft+20;
+            let top = e.clientY+document.body.scrollTop+20;
             $(".showpic").css({left:left,top:top,display:""});
             if(imgsrc.indexOf('://')<0){ imgsrc = ROOT_PATH + '/' + imgsrc;	} else{ imgsrc = imgsrc.replace('mac:','http:'); }
             $(".showpic_img").attr("src", imgsrc);

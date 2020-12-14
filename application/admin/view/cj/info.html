@@ -332,15 +332,15 @@
 <script type="text/javascript">
     layui.use(['element','form','upload','layer'],function () {
         // 操作对象
-        var element = layui.element;
+        let element = layui.element;
         form = layui.form
                 , layer = layui.layer
                 , $ = layui.jquery
                 , upload = layui.upload;
 
         form.on('radio(sourcetype)',function (data) {
-            var num = 4;
-            for (var i=1; i<=num; i++){
+            let num = 4;
+            for (let i=1; i<=num; i++){
                 if (data.value==i){
                     $('#url_type_'+i).show();
                 } else {
@@ -387,12 +387,12 @@
     //  包含内容
     function insertText(id, text) {
         $('#' + id).focus();
-        var str = document.selection.createRange();
+        let str = document.selection.createRange();
         str.text = text;
     }
 
     function add_tag(id) {
-        var index = layer.open({
+        let index = layer.open({
             type: 1
             ,title: "{:lang('admin/cj/filter_rule')}" //不显示标题栏
             ,closeBtn: 1
@@ -404,7 +404,7 @@
             ,moveType: 1 //拖拽模式，0或者1
             ,content: $('#html_rule_show')
             ,yes: function(layero){
-                var str = '';
+                let str = '';
                 $("input[name='html_rule']:checked").each(function(){
                     str+=$(this).val()+"\n";
                 });
@@ -415,7 +415,7 @@
         });
     }
 
-    var caiji=0;
+    let caiji=0;
     function add_caiji()
     {
         $('#customize_config').append('<div class="layui-form-item mt10"><label class="layui-form-label">{:lang('rule_name')}：</label><div class="layui-input-inline"><input type="text" name="data[customize_config][name][]" placeholder="" value="" class="layui-input"></div><div class="layui-form-mid">{:lang('rule_name_en')}：</div><div class="layui-input-inline"><input type="text" name="data[customize_config][en_name][]" placeholder="" value="" class="layui-input"></div></div><div class="layui-form-item"><label class="layui-form-label">{:lang('admin/cj/match_rule')}：</label><div class="layui-input-inline"><textarea name="data[customize_config][rule][]" id="role_'+caiji+'" class="layui-textarea"></textarea><div class="layui-form-mid layui-word-aux">{:lang('use')}"<a href="javascript:insertText(\'title_rule\', \'[内容]\')"> [内容] </a>"{:lang('admin/cj/wildcard_tip')}    </div></div><div class="layui-form-mid">{:lang('admin/cj/filter_rule')}：</div><div class="layui-input-inline"><textarea name="data[customize_config][html_rule][]" id="content_html_rule_'+caiji+'" class="layui-textarea"></textarea><div class="layui-form-mid layui-word-aux"><a class="layui-btn layui-btn-xs" href="javascript:;" onclick="add_tag(\'content_html_rule_'+caiji+'\')">{:lang('select')}</a></div></div></div><hr>');
@@ -423,7 +423,7 @@
     }
 
     function testUrl() {
-        var data = $('#myform').serialize();
+        let data = $('#myform').serialize();
 
         layer.open({
             type: 2

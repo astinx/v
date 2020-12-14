@@ -82,7 +82,7 @@
 <script type="text/javascript">
     layui.use(['form', 'layer'], function () {
         // 操作对象
-        var form = layui.form
+        let form = layui.form
                 , layer = layui.layer
                 , $ = layui.jquery;
 
@@ -102,8 +102,8 @@
 
 
         $('#btnTest').click(function() {
-            var that = $(this);
-            var data = 'cjurl='+ $('#collect_url').val() + '&cjflag='+ '&ac=list';
+            let that = $(this);
+            let data = 'cjurl='+ $('#collect_url').val() + '&cjflag='+ '&ac=list';
 
             $.post("{:url('test')}",data,function(r){
                 if(r.code==1){

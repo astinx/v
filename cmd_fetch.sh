@@ -31,4 +31,4 @@ echo 'location / {
 }' > /www/server/panel/vhost/rewrite/$CurrentDir.conf
 
 
-`/etc/init.d/nginx reload`
+/etc/init.d/nginx reload

@@ -120,7 +120,7 @@
 <script type="text/javascript" src="__STATIC__/js/jquery.cookie.js"></script>
 <script type="text/javascript">
     layui.use(['element', 'form', 'layer'], function() {
-        var element = layui.element
+        let element = layui.element
             ,form = layui.form
             , layer = layui.layer;
 
@@ -135,12 +135,12 @@
 
     });
     function test_email() {
-        var host = $("#host").val();
-        var username = $("#username").val();
-        var password = $("#password").val();
-        var test = $("#test").val();
-        var nick = $("#nick").val();
-        var port = $('#port').val();
+        let host = $("#host").val();
+        let username = $("#username").val();
+        let password = $("#password").val();
+        let test = $("#test").val();
+        let nick = $("#nick").val();
+        let port = $('#port').val();
 
         layer.msg("{:lang('wait_submit')}",{time:500000});
         $.ajax({

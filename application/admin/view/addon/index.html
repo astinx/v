@@ -34,10 +34,10 @@
 
 
 <script type="text/javascript">
-    var url='';
+    let url='';
     layui.use(['form','laypage', 'layer','upload','element'], function() {
         // 操作对象
-        var form = layui.form
+        let form = layui.form
                 , layer = layui.layer
                 , upload = layui.upload
                 ,element = layui.element;
@@ -95,7 +95,7 @@
     });
 
     function load_list(){
-        var h='';
+        let h='';
         $('#addon_list').html('');
         layer.msg("{:lang('wait_submit')}",{time:500000});
 

@@ -86,9 +86,9 @@
 {include file="../../../application/admin/view/public/foot" /}
 <script type="text/javascript" src="__STATIC__/js/jquery.cookie.js"></script>
 <script type="text/javascript">
-    var curUrl = "{:url('push')}";
+    let curUrl = "{:url('push')}";
     layui.use(['element', 'form', 'layer'], function() {
-        var element = layui.element
+        let element = layui.element
             ,form = layui.form
             , layer = layui.layer;
 
@@ -106,9 +106,9 @@
     });
     function post(p)
     {
-        var limit = $('#limit').val();
-        var page = $('#page').val();
-        var ac = $('#ac').val();
+        let limit = $('#limit').val();
+        let page = $('#page').val();
+        let ac = $('#ac').val();
 
         $("#form_post").attr("action", curUrl + "?"+ 'ac=' +ac +'&limit='+limit +'&page='+page +'&' + p);
         $("#form_post").submit();

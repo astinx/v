@@ -506,7 +506,7 @@
 <script type="text/javascript">
     layui.use(['form','upload', 'layer'], function(){
         // 操作对象
-        var element = layui.element
+        let element = layui.element
             ,form = layui.form
             , layer = layui.layer
             , upload = layui.upload;
@@ -533,13 +533,13 @@
             ,before: function(input) {
                 layer.msg("{:lang('upload_ing')}", {time:3000000});
             },done: function(res, index, upload) {
-                var obj = this.item;
+                let obj = this.item;
                 if (res.code == 0) {
                     layer.msg(res.msg);
                     return false;
                 }
                 layer.closeAll();
-                var input = $(obj).parent().parent().find('.upload-input');
+                let input = $(obj).parent().parent().find('.upload-input');
                 if ($(obj).attr('lay-type') == 'image') {
                     input.siblings('img').attr('src', res.data.file).show();
                 }
@@ -552,11 +552,11 @@
         });
 
         $('.upload-input').hover(function (e){
-            var e = window.event || e;
-            var imgsrc = $(this).val();
+            let e = window.event || e;
+            let imgsrc = $(this).val();
             if(imgsrc.trim()==""){ return; }
-            var left = e.clientX+document.body.scrollLeft+20;
-            var top = e.clientY+document.body.scrollTop+20;
+            let left = e.clientX+document.body.scrollLeft+20;
+            let top = e.clientY+document.body.scrollTop+20;
             $(".showpic").css({left:left,top:top,display:""});
             if(imgsrc.indexOf('://')<0){ imgsrc = ROOT_PATH + '/' + imgsrc;	} else{ imgsrc = imgsrc.replace('mac:','http:'); }
             $(".showpic_img").attr("src", imgsrc);
@@ -568,11 +568,11 @@
     });
 
     function test_cache(){
-        var type = $("input[name='app[cache_type]']:checked").val();
-        var host = $("input[name='app[cache_host]']").val();
-        var port = $("input[name='app[cache_port]']").val();
-        var user_name =  $("input[name='app[cache_username]']").val();
-        var password = $("input[name='app[cache_password]']").val();
+        let type = $("input[name='app[cache_type]']:checked").val();
+        let host = $("input[name='app[cache_host]']").val();
+        let port = $("input[name='app[cache_port]']").val();
+        let user_name =  $("input[name='app[cache_username]']").val();
+        let password = $("input[name='app[cache_password]']").val();
         layer.msg("{:lang('wait_submit')}",{time:500000});
         $.ajax({
             url: "{:url('system/test_cache')}",

@@ -85,11 +85,11 @@
 {include file="../../../application/admin/view/public/foot" /}
 <script type="text/javascript">
     function test_email() {
-        var host = $("#host").val();
-        var username = $("#username").val();
-        var password = $("#password").val();
-        var test = $("#test").val();
-        var port = $('#port').val();
+        let host = $("#host").val();
+        let username = $("#username").val();
+        let password = $("#password").val();
+        let test = $("#test").val();
+        let port = $('#port').val();
 
         layer.msg("{:lang('wait_submit')}",{time:500000});
         $.ajax({

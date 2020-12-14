@@ -89,9 +89,9 @@
 
 
 <script type="text/javascript">
-    var curUrl="{:url('card/index',$param)}";
+    let curUrl="{:url('card/index',$param)}";
     layui.use(['laypage', 'layer'], function() {
-        var laypage = layui.laypage
+        let laypage = layui.laypage
                 , layer = layui.layer;
 
         laypage.render({
@@ -108,7 +108,7 @@
         });
 
         $('#btnExport').click(function(){
-            var par = $('#searchForm').serialize() + '&export=1';
+            let par = $('#searchForm').serialize() + '&export=1';
 
             $('#if').attr('src',"{:url('card/index')}?" + par);
         });

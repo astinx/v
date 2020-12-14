@@ -48,14 +48,14 @@
 {include file="../../../application/admin/view/public/foot" /}
 <script type="text/javascript" src="__STATIC__/js/jquery.clipboard.js"></script>
 <script type="text/javascript">
-    var clipboard = new ClipboardJS('.j-clipboard');
+    let clipboard = new ClipboardJS('.j-clipboard');
     clipboard.on('success', function(e) {
        layer.msg('copy ok');
     });
 
     function data_info(path,name)
     {
-        var index = layer.open({
+        let index = layer.open({
             type: 2,
             shade:0.4,
             title: "{:lang('edit')}",

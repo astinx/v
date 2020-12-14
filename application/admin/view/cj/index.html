@@ -51,7 +51,7 @@
 <script>
     layui.use(['form','laypage', 'layer','upload'], function() {
         // 操作对象
-        var form = layui.form
+        let form = layui.form
                 , layer = layui.layer
                 , $ = layui.jquery
                 , upload = layui.upload;
@@ -64,7 +64,7 @@
             ,before: function(input) {
                 layer.msg("{:lang('upload_ing')}", {time:3000000});
             },done: function(res, index, upload) {
-                var obj = this.item;
+                let obj = this.item;
                 if (res.code == 0) {
                     layer.msg(res.msg);
                     return false;
