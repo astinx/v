@@ -176,10 +176,10 @@
                 $("iframe[lay-id='"+id+"']")[0].contentWindow.location.reload(true);//切换后刷新框架
                 return false;
             }
-            if ($('iframe').length == 10) {
+            /*if ($('iframe').length == 10) {
                 layer.msg("{:lang('admin/index/index/menu_max')}");
                 return false;
-            }
+            }*/
             that.css({color:'#fff'});
             tab.add(that.text(), that.attr('href'), that.attr('data-id'));
             tab.change(that.attr('data-id'));
