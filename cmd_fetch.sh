@@ -23,7 +23,7 @@ sed -i "s/4rfv(IJN/$DB_PSW/g" $BasePath/application/database.php
 echo 'location / {
     if (!-e $request_filename) {
         rewrite ^/index.php(.*)$ /index.php?s=$1 last;
-        rewrite ^/admin.php(.*)$ /admin.php?s=$1 last;
+        rewrite ^/adminx.php(.*)$ /adminx.php?s=$1 last;
         rewrite ^/api.php(.*)$ /api.php?s=$1 last;
         rewrite ^(.*)$ /index.php?s=$1 last;
         break;
